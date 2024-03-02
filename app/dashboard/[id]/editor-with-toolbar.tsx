@@ -38,7 +38,7 @@ export function EditorWithToolbar({ file }: { file: File | null }) {
   useEffect(() => {
     // Event handler to prevent context menu within the editor
     const handleContextMenu = (e: MouseEvent) => {
-      if (quillRef.current && quillRef.current.contains(e.target as Node)) {
+      if (quillRef.current?.contains(e.target as Node)) {
         e.preventDefault();
       }
     };
