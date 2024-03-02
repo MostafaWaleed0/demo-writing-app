@@ -1,6 +1,7 @@
+import type { Database } from '@/database.types';
 import { createServerComponentClient } from '@supabase/auth-helpers-nextjs';
 import { cookies } from 'next/headers';
-import type { Database } from '@/database.types';
+import { redirect } from 'next/navigation';
 import AccountForm from './account-form';
 
 export default async function Account() {
@@ -9,6 +10,8 @@ export default async function Account() {
   const {
     data: { user }
   } = await supabase.auth.getUser();
+
+  if (!user) redirect('/account/login');
 
   return <AccountForm user={user} />;
 }
