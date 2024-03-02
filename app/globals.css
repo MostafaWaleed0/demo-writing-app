@@ -1,0 +1,59 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+h1 {
+  @apply font-bold text-7xl leading-none;
+}
+
+h3 {
+  @apply font-bold text-2xl;
+}
+
+.quill {
+  @apply min-h-full;
+}
+
+.ql-editor {
+  @apply !leading-relaxed;
+}
+
+.ql-editor,
+textarea {
+  @apply min-h-[500px] font-sans w-full py-3 px-4 outline-none text-base;
+}
+
+.ql-editor.ql-blank::before {
+  @apply !text-current opacity-60;
+}
+
+.ql-toolbar {
+  @apply rounded-lg absolute z-50 bg-white hidden touch-none select-none;
+}
+
+.ql-container {
+  border-top: 1px solid !important;
+  @apply rounded-md !border-none !border-t !border-gray-300;
+}
+
+.ql-picker-label {
+  @apply flex items-center;
+}
+
+.ql-picker-label::before {
+  @apply !flex;
+}
+
+.ql-picker {
+  @apply !h-fit;
+}
+
+[contenteditable='true'],
+input,
+textarea {
+  @apply caret-pink-600;
+}
+
+[class^='jfk'] {
+  @apply !hidden;
+}
