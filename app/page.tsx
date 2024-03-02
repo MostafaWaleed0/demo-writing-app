@@ -3,7 +3,7 @@ import Link from 'next/link';
 export default function Home() {
   return (
     <>
-      <div className="absolute top-0 left-0 bg-repeat w-full h-full -z-10 bg-[url('/dot.png')]" aria-hidden></div>
+      <div className="absolute top-0 left-0 bg-repeat w-full h-full -z-10 bg-[url('/dot.png')]" aria-hidden />
       <section className="m-auto px-4 space-y-6 py-10">
         <h1 className="max-w-[15ch] text-5xl md:text-7xl">Unleash Your Writing Creativity</h1>
         <p className="max-w-[40ch] text-xl md:text-2xl font-normal">
