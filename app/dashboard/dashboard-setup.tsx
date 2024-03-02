@@ -117,8 +117,6 @@ function Aside({ userId }: { userId: string }) {
           setExceededMaxFiles(data.length >= 5);
         }
       } else {
-        // Log a message if the maximum files limit is reached
-        console.log('Maximum files reached!');
         setExceededMaxFiles(true);
       }
     } finally {
