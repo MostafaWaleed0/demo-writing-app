@@ -62,7 +62,7 @@ export async function getFile(fileId: string) {
 }
 
 // Function to update a file
-export async function updateFile(updatedFile: File['Update'], fileId: string = '') {
+export async function updateFile(updatedFile: File['Update'], fileId = '') {
   try {
     // Update the file with the given ID
     let { data: file, error } = await supabase.from('File').update(updatedFile).eq('id', fileId).single();

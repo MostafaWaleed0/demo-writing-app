@@ -155,7 +155,7 @@ export function EditorWithToolbar({ file }: { file: File | null }) {
   );
 
   // Function to count words in text
-  function countWordsInText(text: string = ''): string {
+  function countWordsInText(text = ''): string {
     // Remove HTML tags from text
     const strippedText = text.replace(/<[^>]+>/g, '');
     // Define word pattern
@@ -175,7 +175,7 @@ export function EditorWithToolbar({ file }: { file: File | null }) {
   }
 
   // Function to count characters in text
-  function countCharactersInText(text: string = ''): string {
+  function countCharactersInText(text = ''): string {
     const count = calculateCharacterLength(text);
     const label = count === 1 ? 'character' : 'characters';
     return `${count} ${label}`;
