@@ -1,5 +1,6 @@
 'use client';
 
+import 'react-quill/dist/quill.snow.css';
 import { Button, Loading } from '@/components/ui';
 import type { Database } from '@/database.types';
 import { updateFile } from '@/lib/queries';
