@@ -1,6 +1,7 @@
 'use client';
 import type { Database } from '@/database.types';
 import { User, createClientComponentClient } from '@supabase/auth-helpers-nextjs';
+import Link from 'next/link';
 import { useCallback, useEffect, useState } from 'react';
 
 export default function AccountForm({ user }: { user: User | null }) {
@@ -17,7 +18,7 @@ export default function AccountForm({ user }: { user: User | null }) {
 
       const { data, error, status } = await supabase
         .from('profiles')
-        .select("full_name, username, website, avatar_url")
+        .select('full_name, username, website, avatar_url')
         .eq('id', user?.id || '')
         .single();
 
@@ -70,6 +71,12 @@ export default function AccountForm({ user }: { user: User | null }) {
   return (
     <div className="w-full px-4 py-12 space-y-12 md:px-10 my-auto">
       <div className="mx-auto max-w-2xl space-y-4">
+        <Link
+          href="/dashboard"
+          className="rounded-md leading-5 p-2 transition dark:bg-neutral-800 dark:hover:bg-neutral-700 bg-neutral-200 hover:bg-neutral-100"
+        >
+          Dashboard
+        </Link>
         <div>
           <label htmlFor="email">Email</label>
           <Input id="email" type="text" value={user?.email} disabled />
