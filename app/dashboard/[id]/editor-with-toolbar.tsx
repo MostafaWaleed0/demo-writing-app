@@ -117,7 +117,7 @@ export function EditorWithToolbar({ file }: { file: File | null }) {
 
   // Memoized callback for content change
   const handleContentUpdate = useCallback(
-    async (text: string) => {
+    (text: string) => {
       const maxLength = 2500;
       if (text && calculateCharacterLength(text) >= maxLength) {
         // Notify user about exceeding the character limit
